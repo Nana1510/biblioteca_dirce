@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-fundo: #E9D7B4;
+    --cor-texto: #ffffff;
+    --cor-secundaria: #8D5740; /* Marrom de fundo/rodapé/livros */
+    --cor-header: #5A3A2E; /* Marrom escuro do header */
+    --cor-botoes: #E9D7B4; /* Cor de fundo do botão login/pesquisa */
+    
+    /* TRANSICÃO SUAVE FINAL */
+    --transicao-suave: 0.5s ease-in-out; 
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'MuseoModerno', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: large;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* --- HEADER PADRÃO --- */
+.main-header-container {
+    background-color: var(--cor-header); 
+    background-image: url(imagens/header.png);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: repeat; 
+    border-radius: 0 0 10px 10px; /* Apenas o fundo arredondado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding-top: 20px; /* Espaço no topo para o conteúdo */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém título na esquerda, login na direita */
+    width: 100%;
+    padding: 0 40px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: var(--cor-texto);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.header-elements {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.header .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .search-bar input {
+    border: none; 
+    border-radius: 30px; 
+    padding: 8px 30px;
+    width: 400px; 
+    max-width: 100%;
+    font-size: 1.2em;
+    outline: none;
+    background-color: var(--cor-botoes);
+    color: #000;
+    transition: box-shadow var(--transicao-suave);
+}
+
+.header .login {
+    flex-shrink: 0;
+}
+
+.header .login a {
+    text-decoration: none;
+    color: var(--cor-secundaria); 
+    background-color: var(--cor-botoes); 
+    padding: 8px 30px; 
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: lowercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.header .login a:hover {
+    background-color: #f7e8c7;
+    transform: scale(1.03);
+}
+
+/* Menu de Navegação */
+.navigation {
+    width: 100%;
+    padding: 0 40px;
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: bold;
+    padding: 10px;
+    display: block; 
+    text-transform: lowercase;
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.navigation li a:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.03);
+}
+
+.navigation li a:active {
+    color: var(--cor-fundo);
+    text-shadow: 0 0 8px var(--cor-fundo), 0 0 2px var(--cor-texto);
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out; 
+}
+
+/* --- RECOMENDADOS E LIVROS --- */
+.recomendados{
+    justify-content: center;
+    align-items: center;
+    /* Garante que o conteúdo não fique sob o header */
+    padding-top: 20px; 
+}
+
+.recomendados-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 0 auto; 
+}
+
+.recomendados-btn button {
+    background-color: var(--cor-secundaria); 
+    color: var(--cor-texto);
+    font-size: 1.3em;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: default; 
+    font-family: 'MuseoModerno', sans-serif;
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.recomendados-btn button:hover {
+    background-color: #a97a5a;
+    transform: scale(1.03);
+}
+
+.recomendados-livros {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    padding: 40px 20px;
+    text-align:center;
+    flex-wrap: nowrap;
+
+}
+
+.recomendados-livros .livro {
+    height: 440px;
+    background-color: var(--cor-secundaria);
+    border-radius: 20px;
+    padding: 15px;
+    width: 260px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform var(--transicao-suave);
+    object-fit: cover;
+}
+
+.recomendados-livros .livro img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.recomendados-livros .livro p {
+    margin-top: 12px;
+    color: var(--cor-texto);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.recomendados-livros .livro:hover {
+    transform: scale(1.05);
+}
+
+/* --- RODAPÉ --- */
+.rodape{
+    background-color: var(--cor-secundaria);
+    position: relative; 
+    width: 100%;
+    color: var(--cor-texto);
+    padding: 10px 5%;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 40px;
+}
+
+.rodape a {
+    color: var(--cor-texto);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 900px) {
+    .main-header-container {
+        /* Altura reduzida para mobile */
+        height: auto; 
+        padding-top: 10px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .header-elements {
+        flex: none;
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    .header .search-bar {
+        flex: none;
+        width: 80%;
+        justify-content: center;
+    }
+    .header .search-bar input {
+        width: 100%;
+        max-width: 250px;
+        padding: 6px 15px;
+        font-size: 1em;
+    }
+    .header .login {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .header .login a {
+        padding: 6px 15px;
+        font-size: 1em;
+    }
+    .navigation {
+        height: auto;
+        padding-bottom: 5px;
+    }
+    .navigation ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .recomendados-livros {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+}

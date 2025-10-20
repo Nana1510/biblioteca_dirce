@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-fundo: #E9D7B4;
+    --cor-texto: #ffffff;
+    --cor-secundaria: #8D5740; /* Marrom de fundo/rodapé/livros */
+    --cor-header: #5A3A2E; /* Marrom escuro do header */
+    --cor-botoes: #E9D7B4; /* Cor de fundo do botão login/pesquisa */
+    
+    /* TRANSICÃO SUAVE FINAL */
+    --transicao-suave: 0.5s ease-in-out; 
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'MuseoModerno', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: large;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* --- HEADER PADRÃO --- */
+.main-header-container {
+    background-color: var(--cor-header); 
+    background-image: url(/imagens/header.png);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: repeat; 
+    border-radius: 0 0 10px 10px; /* Apenas o fundo arredondado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding-top: 20px; /* Espaço no topo para o conteúdo */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém título na esquerda, login na direita */
+    width: 100%;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: var(--cor-texto);
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.header-elements {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
