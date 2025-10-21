@@ -10,13 +10,8 @@
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
     --cor-secundaria: #8D5740;
-    /* Marrom de fundo/rodapé/livros */
     --cor-header: #5A3A2E;
-    /* Marrom escuro do header */
     --cor-botoes: #E9D7B4;
-    /* Cor de fundo do botão login/pesquisa */
-
-    /* TRANSICÃO SUAVE FINAL */
     --transicao-suave: 0.5s ease-in-out;
 }
 
@@ -36,31 +31,27 @@ body {
     flex: 1;
 }
 
-/* --- HEADER PADRÃO --- */
+/* --- HEADER --- */
 .main-header-container {
     background-color: var(--cor-header);
     background-image: url(/imagens/header.png);
     height: 150px;
-    /* igual altura da imagem */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0 0 10px 10px;
-    /* Apenas o fundo arredondado */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding-top: 20px;
-    /* Espaço no topo para o conteúdo */
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Mantém título na esquerda, login na direita */
     width: 100%;
     padding: 0 40px;
 }
@@ -69,7 +60,6 @@ body {
     font-size: 2.2rem;
     color: var(--cor-texto);
     font-weight: 700;
-    flex-shrink: 0;
 }
 
 .header-elements {
@@ -91,16 +81,11 @@ body {
     border-radius: 30px;
     padding: 8px 30px;
     width: 400px;
-    max-width: 100%;
     font-size: 1.2em;
     outline: none;
     background-color: var(--cor-botoes);
     color: #000;
     transition: box-shadow var(--transicao-suave);
-}
-
-.header .login {
-    flex-shrink: 0;
 }
 
 .header .login a {
@@ -121,7 +106,7 @@ body {
     transform: scale(1.03);
 }
 
-/* Menu de Navegação */
+/* Menu */
 .navigation {
     width: 100%;
     padding: 0 40px;
@@ -135,19 +120,14 @@ body {
 
 .navigation ul {
     display: flex;
-    flex-direction: row;
     gap: 40px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .navigation li a {
     text-decoration: none;
     color: var(--cor-texto);
     font-weight: bold;
-    padding: 10px;
-    display: block;
     text-transform: lowercase;
     transition: background-color var(--transicao-suave), transform var(--transicao-suave);
 }
@@ -157,154 +137,108 @@ body {
     transform: scale(1.03);
 }
 
-.navigation li a:active {
-    color: var(--cor-fundo);
-    text-shadow: 0 0 8px var(--cor-fundo), 0 0 2px var(--cor-texto);
-    transform: scale(1.05);
-    transition: transform 0.1s ease-out;
-}
-
-.emprestimo {
-    justify-content: center;
-    align-items: center;
-    /* Garante que o conteúdo não fique sob o header */
-    padding-top: 5px;
-}
-
-.emprestimo-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 8px auto 0 auto;
-}
-
-.emprestimo-btn button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    font-size: 1.3em;
-    padding: 8px 40px;
-    border: none;
-    border-radius: 30px;
-    cursor: default;
-    font-family: 'MuseoModerno', sans-serif;
-    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
-}
-
-.emprestimo-btn button:hover {
-    background-color: #a97a5a;
-    transform: scale(1.03);
-}
-
+/* --- CONTEÚDO PRINCIPAL --- */
 .emprestimo-page {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 8px; /* aumenta o espaçamento interno */
+    padding: 40px 20px;
     background-color: var(--cor-fundo);
 }
 
-/* Card do livro mais largo */
 .livro-card {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 40px;
     background-color: #D8BF90;
     border-radius: 20px;
-    padding: 40px; /* aumenta espaço interno */
+    padding: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    max-width: 1200px; /* mais largo que antes */
+    max-width: 1200px;
     width: 100%;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-/* Ajuste do lado direito (descrição + botões) */
-.livro-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* aumenta espaçamento interno */
     color: var(--cor-secundaria);
 }
 
-/* Botões lado a lado */
-.botoes-emprestimo {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* distância entre o botão e disponibilidade */
-    margin-top: 15px;
-    font-family: 'MuseoModerno', sans-serif;
-}
-
 .livro-img {
-    width: 300px;
+    width: 280px;
     border-radius: 15px;
     object-fit: cover;
 }
 
-.livro-info h2 {
-    font-size: 2rem;
+.lado-esquerdo-inferior {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.livro-info p {
-    font-size: 1.1em;
-    line-height: 1.5;
+.livro-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: justify;
+}
+
+/* --- Retângulo marrom com botões --- */
+.botoes-container {
+    background-color: var(--cor-secundaria);
+    border-radius: 25px;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--cor-texto);
 }
 
 .btn-emprestar {
-    padding: 12px 25px;
-    border-radius: 30px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
     border: none;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
+    border-radius: 25px;
+    padding: 20px 70px;
+    font-size: 1.1rem;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
     font-family: 'MuseoModerno', sans-serif;
-        padding: 20px 30px;
-    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .btn-emprestar:hover {
-    background-color: #a97a5a;
+    background-color: #f7e8c7;
     transform: scale(1.05);
 }
 
-.disponibilidade {
-    font-weight: bold;
-    margin-top: 5px;
+.btn-comentarios, .btn-ler {
+    background-color: var(--cor-fundo);
     color: var(--cor-secundaria);
-    font-family: 'MuseoModerno', sans-serif;
-}
-
-/* Lado esquerdo inferior: comentários + avaliações */
-.lado-esquerdo-inferior {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: flex-start;
-    margin-top: 20px;
-    color: var(--cor-secundaria);
-}
-
-.btn-comentarios {
-    padding: 20px 30px;
-    border-radius: 30px;
     border: none;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    cursor: pointer;
-    font-weight: bold;
+    border-radius: 25px;
+    padding: 20px 10px;
     font-size: 1rem;
     font-family: 'MuseoModerno', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 230px;
+    font-weight: bold;
+ 
 }
 
-.avaliacoes {
-    background-color: #fff2e0;
-    padding: 10px;
-    border-radius: 10px;
+.btn-comentarios:hover {
+    background-color: #f7e8c7;
+    transform: scale(1.05);
 }
 
-/* Modal de empréstimo */
+.btn-ler:hover {
+    background-color: #f7e8c7;
+    transform: scale(1.05);
+}
+
+/* Modal */
 .modal-emprestimo {
     display: none;
     position: fixed;
@@ -342,26 +276,15 @@ body {
         align-items: center;
     }
 
-    .livro-img {
-        width: 80%;
-        max-width: 300px;
-    }
-
-    .livro-info {
-        width: 100%;
-        align-items: center;
-    }
-
-    .lado-esquerdo-inferior {
-        flex-direction: row;
-        gap: 20px;
+    .botoes-container {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
 /* --- RODAPÉ --- */
 .rodape {
     background-color: var(--cor-secundaria);
-    position: relative;
     width: 100%;
     color: var(--cor-texto);
     padding: 10px 5%;

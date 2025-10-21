@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-fundo: #E9D7B4;
+    --cor-texto: #ffffff;
+    --cor-secundaria: #8D5740;
+    /* Marrom de fundo/rodapé/livros */
+    --cor-header: #5A3A2E;
+    /* Marrom escuro do header */
+    --cor-botoes: #E9D7B4;
+    /* Cor de fundo do botão login/pesquisa */
+
+    /* TRANSICÃO SUAVE FINAL */
+    --transicao-suave: 0.5s ease-in-out;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'MuseoModerno', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: large;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* --- HEADER PADRÃO --- */
+.main-header-container {
+    background-color: var(--cor-header);
+    background-image: url(/imagens/header.png);
+    height: 150px;
+    /* igual altura da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 0 10px 10px;
+    /* Apenas o fundo arredondado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding-top: 20px;
+    /* Espaço no topo para o conteúdo */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Mantém título na esquerda, login na direita */
+    width: 100%;
+    padding: 0 40px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: var(--cor-texto);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.header-elements {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.header .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .search-bar input {
+    border: none;
+    border-radius: 30px;
+    padding: 8px 30px;
+    width: 400px;
+    max-width: 100%;
+    font-size: 1.2em;
+    outline: none;
+    background-color: var(--cor-botoes);
+    color: #000;
+    transition: box-shadow var(--transicao-suave);
+}
+
+.header .login {
+    flex-shrink: 0;
+}
+
+.header .login a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-botoes);
+    padding: 8px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: lowercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.header .login a:hover {
+    background-color: #f7e8c7;
+    transform: scale(1.03);
+}
+
+/* Menu de Navegação */
+.navigation {
+    width: 100%;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    text-transform: lowercase;
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.navigation li a:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.03);
+}
+
+.navigation li a:active {
+    color: var(--cor-fundo);
+    text-shadow: 0 0 8px var(--cor-fundo), 0 0 2px var(--cor-texto);
+    transform: scale(1.05);
+    transition: transform 0.1s ease-out;
+}
+
+.topo-catalogo {
+    display: flex;
+    justify-content: space-between; /* título à esquerda, botão à direita */
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 20px auto; /* centraliza horizontalmente com espaço em cima e embaixo */
+}
+
+.topo-catalogo h2 {
+    color: var(--cor-secundaria);
+    font-size: 2rem;
+}
+
+.btn-categorias {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao-suave);
+    font-family: 'MuseoModerno', sans-serif;
+    font-size: 1.1rem;
+}
+
+.btn-categorias:hover {
+    transform: scale(1.05);
+}
+
+
+.livros-catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    margin: 40px auto;
+    background-color: #D8BF90;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    color: var(--cor-secundaria);
+    
+}
+
+/* Cada livro */
+.livros-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #E9D7B4;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem da capa */
+.livros-capa {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Texto ao lado */
+.livros-info {
+    flex: 1;
+}
+
+.livros-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: var(--cor-header);
+}
+
+.livros-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #5A3A2E;
+}
+
+.botao-vermais {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.botao-vermais:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.05);
+}
+
+
+.rodape {
+    background-color: var(--cor-secundaria);
+    position: relative;
+    width: 100%;
+    color: var(--cor-texto);
+    padding: 10px 5%;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 8px;
+}
+
+.rodape a {
+    color: var(--cor-texto);
+}
