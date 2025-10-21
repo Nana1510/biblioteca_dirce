@@ -9,12 +9,13 @@
 :root {
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
-    --cor-secundaria: #8D5740; /* Marrom de fundo/rodapé/livros */
-    --cor-header: #5A3A2E; /* Marrom escuro do header */
-    --cor-botoes: #E9D7B4; /* Cor de fundo do botão login/pesquisa */
-    
-    /* TRANSICÃO SUAVE FINAL */
-    --transicao-suave: 0.5s ease-in-out; 
+    --cor-secundaria: #8D5740;
+    /* Marrom de fundo/rodapé/livros */
+    --cor-header: #5A3A2E;
+    /* Marrom escuro do header */
+    --cor-botoes: #E9D7B4;
+    /* Cor de fundo do botão login/pesquisa */
+    --transicao-suave: 0.5s ease-in-out;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
     color: var(--cor-texto);
     line-height: 1.6;
     font-size: large;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,43 +36,160 @@ body {
 
 /* --- HEADER PADRÃO --- */
 .main-header-container {
-    background-color: var(--cor-header); 
+    background-color: var(--cor-header);
     background-image: url(/imagens/header.png);
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat; 
-    border-radius: 0 0 10px 10px; /* Apenas o fundo arredondado */
+    background-repeat: repeat;
+    border-radius: 0 0 10px 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    padding-top: 20px; /* Espaço no topo para o conteúdo */
+    height: 175px;
+
 }
 
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mantém título na esquerda, login na direita */
+    justify-content: space-between;
+    /* Mantém título na esquerda, login na direita */
     width: 100%;
     padding: 0 40px;
     text-align: center;
 }
 
 .header h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     color: var(--cor-texto);
     font-weight: 700;
     flex-shrink: 0;
     width: 100%;
-    height: 150px;
+    height: 200px;
+    text-align: center;
+    padding-top: 60px;
 }
 
-.header-elements {
+.login-container {
+    display: flex;
+    /* coloca lado a lado */
+    background-color: #E9D7B4;
+    /* marrom do fundo */
+    padding: 20px;
+    border-radius: 15px;
+    gap: 40px;
+    /* espaço entre as caixas */
+}
+
+/* --- CADA CAIXA DE LOGIN OU CADASTRO --- */
+.login-box,
+.signup-box {
+    background-color: #D8BF90;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    height: 600px;
+}
+
+/* --- TÍTULOS (h2) --- */
+h2 {
+    color: #5A3A2E;
+    /* marrom escuro */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+
+
+}
+
+/* --- INPUTS --- */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 20px 50px;
+    border: 2px solid #8D5740;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'MuseoModerno', sans-serif;
+    transition: border-color 0.3s ease;
+    margin-top: 10px;
+
+}
+
+/* --- BOTÃO PRINCIPAL (Acessar / Criar conta) --- */
+.login-btn {
+    background-color: #8D5740;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    /* deixa mais redondinho */
+    padding: 15px 50px;
+    /* aumenta o tamanho */
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+    font-size: 1.5rem;
+    font-family: 'MuseoModerno', sans-serif;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background-color: #5A3A2E;
+    transform: scale(1.03);
+    /* dá um efeitinho suave no hover */
+
+}
+
+/* --- BOTÃO DO GOOGLE --- */
+.google-btn {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    /* deixa bem redondinho também */
+    padding: 15px 50px;
+    /* aumenta o tamanho */
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex: 1;
     justify-content: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
+.google-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.google-btn:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.03);
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: var(--cor-secundaria);
+    position: relative;
+    width: 100%;
+    color: var(--cor-texto);
+    padding: 10px 5%;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 40px;
+}
+
+.rodape a {
+    color: var(--cor-texto);
+}

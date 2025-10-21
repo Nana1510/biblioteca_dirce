@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biblioteca Dirce - Home</title>
+    <link rel="stylesheet" href="empréstimo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="main-header-container">
+        <header class="header">
+            <h1>Biblioteca Dirce</h1>
+            <div class="header-elements">
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar..." />
+                </div>
+                <div class="login">
+                    <a href="/login/login.html">login/entrar</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="/index.html">Menu</a></li>
+                <li><a href="/comunidade/comentarios.html">Comunidade</a></li>
+                <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
+                <li><a href="/perfil/perfil.html">perfil</a></li>
+                <li><a href="/favoritos/favoritos.html">favoritos</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <section class="emprestimo">
+        <div class="emprestimo-btn">
+            <button>empréstimo</button>
+        </div>
+        </head>
+
+        <body>
+            <main>
+                <div class="emprestimo-page">
+                    <div class="livro-card">
+
+                        <!-- Capa do livro -->
+                        <img src="/livros/coraline.jpg" alt="coraline" class="livro-img">
+
+                        <!-- Lado direito: descrição e ações -->
+                        <div class="livro-info">
+                            <h2 class="titulo-livro">Coraline</h2>
+                            <p class="autor">Autor: Neil Gaiman</p>
+                            <p class="publicacao">Data de Publicação: 2 de julho de 2002</p>
+                            <p class="descricao">
+                                Coraline é uma novela fantástica de terror do autor britânico Neil Gaiman,
+                                publicado em 2002 pela Bloomsbury, no Reino Unido e pela Harper Collins, nos Estados
+                                Unidos.
+                                Ganhou os prêmios Hugo e Nebula Award de melhor novela de 2002 e o Bram Stoker
+                                Award de melhor trabalho de novos escritores de 2002.
+                            </p>
+
+                            <!-- Botão de emprestar + disponibilidade -->
+                            <button class="btn-emprestar">Emprestar</button>
+                            <button class="btn-emprestar">Disponível...</button>
+                        </div>
+
+                        <!-- Botão de comentários e avaliações abaixo da capa -->
+                        <div class="lado-esquerdo-inferior">
+                            <button class="btn-comentarios"
+                                onclick="window.location.href='/comunidade/comentarios.html'">
+                                Ver comentários
+                            </button>
+                            <div class="avaliacoes">
+                                <p>Avaliação 1: ⭐⭐⭐⭐☆</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal de empréstimo -->
+                <div class="modal-emprestimo">
+                    <div class="modal-conteudo">
+                        <span class="fechar">&times;</span>
+                        <h2>Nome do Livro</h2>
+                        <p><strong>Autor:</strong> Nome do Autor</p>
+                        <p><strong>Data de publicação:</strong> 01/01/2020</p>
+                        <p><strong>Descrição:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p><strong>Data de empréstimo:</strong> 20/10/2025</p>
+                        <p><strong>Data de devolução:</strong> 27/10/2025</p>
+                    </div>
+                </div>
+            </main>
+        </body>
+        <footer class="rodape">
+            <p>Contato:<a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+
+</html>

@@ -9,12 +9,15 @@
 :root {
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
-    --cor-secundaria: #8D5740; /* Marrom de fundo/rodapé/livros */
-    --cor-header: #5A3A2E; /* Marrom escuro do header */
-    --cor-botoes: #E9D7B4; /* Cor de fundo do botão login/pesquisa */
-    
+    --cor-secundaria: #8D5740;
+    /* Marrom de fundo/rodapé/livros */
+    --cor-header: #5A3A2E;
+    /* Marrom escuro do header */
+    --cor-botoes: #E9D7B4;
+    /* Cor de fundo do botão login/pesquisa */
+
     /* TRANSICÃO SUAVE FINAL */
-    --transicao-suave: 0.5s ease-in-out; 
+    --transicao-suave: 0.5s ease-in-out;
 }
 
 body {
@@ -23,7 +26,7 @@ body {
     color: var(--cor-texto);
     line-height: 1.6;
     font-size: large;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,24 +38,29 @@ body {
 
 /* --- HEADER PADRÃO --- */
 .main-header-container {
-    background-color: var(--cor-header); 
+    background-color: var(--cor-header);
     background-image: url(imagens/header.png);
-    background-size: cover; 
+    height: 150px;
+    /* igual altura da imagem */
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat; 
-    border-radius: 0 0 10px 10px; /* Apenas o fundo arredondado */
+    background-repeat: no-repeat;
+    border-radius: 0 0 10px 10px;
+    /* Apenas o fundo arredondado */
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    padding-top: 20px; /* Espaço no topo para o conteúdo */
+    padding-top: 20px;
+    /* Espaço no topo para o conteúdo */
 }
 
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mantém título na esquerda, login na direita */
+    justify-content: space-between;
+    /* Mantém título na esquerda, login na direita */
     width: 100%;
     padding: 0 40px;
 }
@@ -79,10 +87,10 @@ body {
 }
 
 .header .search-bar input {
-    border: none; 
-    border-radius: 30px; 
+    border: none;
+    border-radius: 30px;
     padding: 8px 30px;
-    width: 400px; 
+    width: 400px;
     max-width: 100%;
     font-size: 1.2em;
     outline: none;
@@ -97,9 +105,9 @@ body {
 
 .header .login a {
     text-decoration: none;
-    color: var(--cor-secundaria); 
-    background-color: var(--cor-botoes); 
-    padding: 8px 30px; 
+    color: var(--cor-secundaria);
+    background-color: var(--cor-botoes);
+    padding: 8px 30px;
     border-radius: 30px;
     font-size: 1.2em;
     font-weight: bold;
@@ -117,17 +125,18 @@ body {
 .navigation {
     width: 100%;
     padding: 0 40px;
-    height: 60px; 
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
 }
 
 .navigation ul {
     display: flex;
     flex-direction: row;
-    gap: 40px; 
+    gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -138,7 +147,7 @@ body {
     color: var(--cor-texto);
     font-weight: bold;
     padding: 10px;
-    display: block; 
+    display: block;
     text-transform: lowercase;
     transition: background-color var(--transicao-suave), transform var(--transicao-suave);
 }
@@ -152,32 +161,32 @@ body {
     color: var(--cor-fundo);
     text-shadow: 0 0 8px var(--cor-fundo), 0 0 2px var(--cor-texto);
     transform: scale(1.05);
-    transition: transform 0.1s ease-out; 
+    transition: transform 0.1s ease-out;
 }
 
 /* --- RECOMENDADOS E LIVROS --- */
-.recomendados{
+.recomendados {
     justify-content: center;
     align-items: center;
     /* Garante que o conteúdo não fique sob o header */
-    padding-top: 20px; 
+    padding-top: 10px;
 }
 
 .recomendados-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px auto 0 auto; 
+    margin: 8px auto 0 auto;
 }
 
 .recomendados-btn button {
-    background-color: var(--cor-secundaria); 
+    background-color: var(--cor-secundaria);
     color: var(--cor-texto);
     font-size: 1.3em;
-    padding: 16px 40px;
+    padding: 8px 40px;
     border: none;
     border-radius: 30px;
-    cursor: default; 
+    cursor: default;
     font-family: 'MuseoModerno', sans-serif;
     transition: background-color var(--transicao-suave), transform var(--transicao-suave);
 }
@@ -190,10 +199,12 @@ body {
 .recomendados-livros {
     display: flex;
     justify-content: center;
-    gap: 30px; 
+    gap: 30px;
     padding: 40px 20px;
-    text-align:center;
+    text-align: center;
     flex-wrap: nowrap;
+    margin-top: 0px;
+
 
 }
 
@@ -202,8 +213,8 @@ body {
     background-color: var(--cor-secundaria);
     border-radius: 20px;
     padding: 15px;
-    width: 260px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 270px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform var(--transicao-suave);
     object-fit: cover;
@@ -212,13 +223,15 @@ body {
 .recomendados-livros .livro img {
     width: 100%;
     border-radius: 15px;
+    height: 350px;
 }
 
 .recomendados-livros .livro p {
-    margin-top: 12px;
+    margin-top: 8px;
     color: var(--cor-texto);
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .recomendados-livros .livro:hover {
@@ -226,9 +239,9 @@ body {
 }
 
 /* --- RODAPÉ --- */
-.rodape{
+.rodape {
     background-color: var(--cor-secundaria);
-    position: relative; 
+    position: relative;
     width: 100%;
     color: var(--cor-texto);
     padding: 10px 5%;
@@ -236,7 +249,7 @@ body {
     font-weight: bold;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: 40px;
+    margin-top: 8px;
 }
 
 .rodape a {
@@ -244,61 +257,45 @@ body {
 }
 
 /* --- MEDIA QUERIES --- */
-@media (max-width: 900px) {
-    .main-header-container {
-        /* Altura reduzida para mobile */
-        height: auto; 
-        padding-top: 10px;
-    }
+/* Notebooks 1024px ~ 1366px */
+@media (max-width: 1366px) and (min-width: 769px) {
     .header {
         flex-direction: column;
         align-items: center;
         padding: 10px 20px;
         gap: 10px;
     }
+
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         text-align: center;
     }
+
     .header-elements {
-        flex: none;
         width: 100%;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
     }
-    .header .search-bar {
-        flex: none;
-        width: 80%;
-        justify-content: center;
-    }
+
     .header .search-bar input {
-        width: 100%;
-        max-width: 250px;
-        padding: 6px 15px;
-        font-size: 1em;
+        width: 300px;
     }
-    .header .login {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .header .login a {
-        padding: 6px 15px;
-        font-size: 1em;
-    }
-    .navigation {
-        height: auto;
-        padding-bottom: 5px;
-    }
-    .navigation ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
     .recomendados-livros {
         flex-wrap: wrap;
+        /* Quebra em linhas se não couber */
+        gap: 25px;
         justify-content: center;
-        gap: 20px;
-        padding: 20px 10px;
+    }
+
+    .recomendados-livros .livro {
+        width: 220px;
+        /* Um pouco menor pra caber melhor */
+    }
+
+    .navigation ul {
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
