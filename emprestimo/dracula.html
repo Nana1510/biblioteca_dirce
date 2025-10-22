@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biblioteca Dirce - Empréstimo</title>
+    <link rel="stylesheet" href="empréstimo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="main-header-container">
+        <header class="header">
+            <h1>Biblioteca Dirce</h1>
+            <div class="header-elements">
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar..." />
+                </div>
+                <div class="login">
+                    <a href="/login/login.html">login/entrar</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="/index.html">Menu</a></li>
+                <li><a href="/comunidade/comentarios.html">Comunidade</a></li>
+                <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
+                <li><a href="/perfil/perfil.html">perfil</a></li>
+                <li><a href="/favoritos/favoritos.html">favoritos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <section class="emprestimo-page">
+            <div class="livro-card">
+                <!-- Lado esquerdo: capa + comentários -->
+                <div class="lado-esquerdo">
+                    <img src="/livros/dracula.jpg" alt="dracula" class="livro-img">
+
+                    <div class="lado-esquerdo-inferior">
+                        <div class="botoes-container">
+                            <button class="btn-comentarios"
+                                onclick="window.location.href='/comunidade/comentarios.html'">
+                                comentários...
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Lado direito: descrição + botões -->
+                <div class="livro-info">
+                    <h2 class="titulo-livro">Dracula</h2>
+                    <p class="autor"><strong>Autor:</strong>Bram Stoker</p>
+                    <p class="publicacao"><strong>Data de Publicação:</strong>1897</p>
+                    <p class="descricao">
+                        jovem agente imobiliário Jonathan Harker viaja para a Transilvânia para fechar negócios com o
+                        excêntrico Conde Drácula. Preso no castelo sombrio, ele descobre a natureza aterrorizante de seu
+                        anfitrião. A ameaça se espalha para Londres, forçando um grupo de amigos, liderados pelo
+                        Professor Van Helsing, a travar uma caçada desesperada contra a criatura milenar para salvar
+                        aqueles que amam. A narrativa é contada inteiramente através de cartas e diários, adicionando um
+                        suspense realista à trama gótica.
+                    </p>
+
+                    <!-- Retângulo marrom com botões -->
+                    <div class="botoes-container">
+                        <button class="btn-emprestar">emprestar</button>
+                        <button class="btn-ler">ler</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de empréstimo -->
+        <div class="modal-emprestimo">
+            <div class="modal-conteudo">
+                <span class="fechar">&times;</span>
+                <h2>Dracuka</h2>
+                <p><strong>Autor:</strong> Neil Gaiman</p>
+                <p><strong>Data de publicação:</strong> 2 de julho de 2002</p>
+                <p><strong>Descrição:</strong> Coraline é uma novela fantástica de terror do autor britânico Neil
+                    Gaiman.</p>
+                <p><strong>Data de empréstimo:</strong> 21/10/2025</p>
+                <p><strong>Data de devolução:</strong> 28/10/2025</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>

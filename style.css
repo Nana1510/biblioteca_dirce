@@ -202,8 +202,10 @@ body {
     gap: 30px;
     padding: 40px 20px;
     text-align: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
 
 }
@@ -232,6 +234,7 @@ body {
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
+    
 }
 
 .recomendados-livros .livro:hover {
