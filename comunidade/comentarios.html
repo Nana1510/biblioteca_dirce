@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biblioteca Dirce - Home</title>
+    <title>Biblioteca Dirce - Comentários</title>
     <link rel="stylesheet" href="/comunidade/comentarios.css" />
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
     <div class="main-header-container">
         <header class="header">
             <h1>Biblioteca Dirce</h1>
@@ -27,51 +26,48 @@
 
         <nav class="navigation">
             <ul>
-                <li><a href="/index.html">Menu</a></li>
-                <li><a href="/comunidade/comentarios.html">Comunidade</a></li>
-                <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
+                <li><a href="/index.html">menu</a></li>
+                <li><a href="/comunidade/comentarios.html">comunidade</a></li>
+                <li><a href="/catálogo/catalogo.html">catálogo</a></li>
                 <li><a href="/perfil/perfil.html">perfil</a></li>
                 <li><a href="/favoritos/favoritos.html">favoritos</a></li>
             </ul>
         </nav>
     </div>
+
     <main>
         <section class="emprestimo-page">
             <div class="livro-card">
-                <!-- Lado esquerdo: capa + comentários -->
+                <!-- Lado esquerdo: capa -->
                 <div class="lado-esquerdo">
                     <img src="/livros/alice.jpg" alt="alice" class="livro-img">
-
-                    <div class="lado-esquerdo-inferior">
-
-                    </div>
                 </div>
 
-                <!-- Lado direito: descrição + botões -->
+                <!-- Lado direito: descrição + comentários -->
                 <div class="livro-info">
                     <h2 class="titulo-livro">Alice</h2>
-                    <p class="autor"><strong>Autor:</strong>Lewis Carroll</p>
-                    <p class="publicacao"><strong>Data de Publicação:</strong>1865</p>
+                    <p class="autor"><strong>Autor:</strong> Lewis Carroll</p>
+                    <p class="publicacao"><strong>Data de Publicação:</strong> 1865</p>
+
                     <div class="comentarios-form-container">
                         <form id="form-comentarios">
-                            <label for="comentarios">Comentar:</label>
-                            <textarea id="comentarios" name="comentarios" placeholder="Escreva um comentário:"
-                                rows="5"></textarea>
+                            <label for="comentarios">comentar:</label>
+                            <textarea id="comentarios" name="comentarios" placeholder="Escreva um comentário:" rows="5"></textarea>
 
-                            <button type="submit" class="btn-comentario-enviar">
-                                Enviar Comentário
-                            </button>
+                            <button type="submit" class="btn-comentario-enviar">Enviar Comentário</button>
                         </form>
 
                         <p id="feedback-comentario"
                             style="color: var(--cor-secundaria); margin-top: 15px; font-weight: bold;"></p>
                     </div>
                 </div>
+            </div>
         </section>
-        <footer class="rodape">
-            <p>Contato:<a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
-        </footer>
+    </main>
 
+    <footer class="rodape">
+        <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+    </footer>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biblioteca Dirce - Home</title>
+    <title>Biblioteca Dirce - Catálogo</title>
     <link rel="stylesheet" href="catalogo.css" />
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -29,50 +29,44 @@
                 <li><a href="/index.html">Menu</a></li>
                 <li><a href="/comunidade/comentarios.html">Comunidade</a></li>
                 <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
-                <li><a href="/perfil/perfil.html">perfil</a></li>
-                <li><a href="/favoritos/favoritos.html">favoritos</a></li>
+                <li><a href="/perfil/perfil.html">Perfil</a></li>
+                <li><a href="/favoritos/favoritos.html">Favoritos</a></li>
             </ul>
         </nav>
     </div>
+
     <main class="main-content">
         <div class="topo-catalogo">
             <h2>Catálogo de Livros</h2>
-            <button class="btn-categorias">categorias</button>
+            <button class="btn-categorias">Categorias</button>
         </div>
+
         <div class="livros-catalogo">
+            <!-- Os livros serão carregados dinamicamente pelo JS -->
+        </div>
 
-            <div class="livros-item">
-                <img src="/livros/sol da meia noite.jpg" alt="sol da meia noite" class="livros-capa">
-                <div class="livro-info">
-                    <h2>Sol da Meia noite</h2>
-                    <p>Em Sol da Meia-Noite, a história de Crepúsculo é contada sob a perspectiva de Edward Cullen.
-                        Aqui, o leitor mergulha na mente de um vampiro dividido entre o amor e o instinto, lutando
-                        contra o desejo incontrolável pelo sangue — e pela alma — de Bella Swan.
-                        Enquanto tenta proteger Bella de si mesmo, Edward revela os segredos sombrios de seu mundo e a
-                        profundidade do seu amor impossível.</p>
-                    <a href="/emprestimo/sol.html" class="botao-vermais">Ver mais</a>
-                </div>
+        <!-- Layout de detalhes + comentários -->
+        <div id="detalhes-livro" class="detalhes-livro" style="display:none;">
+            <h2 id="titulo-livro"></h2>
+            <p id="sinopse-livro"></p>
+
+            <div id="comentarios-livro">
+                <h3>Comentários</h3>
+                <ul id="lista-comentarios"></ul>
+
+                <form id="form-comentario">
+                    <input type="text" id="input-comentario" placeholder="Escreva um comentário" required>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
-
-            <div class="livros-item">
-                <img src="/livros/alice.jpg" alt="alice" class="livros-capa">
-                <div class="livros-info">
-                    <h2>Alice no país das maravilhas</h2>
-                    <p> Alice é uma menina curiosa e sonhadora que vive buscando algo além da rotina monótona do seu
-                        dia. Um dia, ao seguir um coelho branco apressado que carrega um relógio, ela acaba caindo em um
-                        buraco profundo e despertando em um mundo completamente diferente de tudo o que já conheceu.</p>
-                    <a href="/emprestimo/alice.html" class="botao-vermais">Ver mais</a>
-
-                </div>
-            </div>
-
         </div>
     </main>
 
     <footer class="rodape">
-        <p>Contato:<a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+        <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
     </footer>
 
+    <script src="/catálogo/catalogo.js"></script>
 </body>
 
 </html>
