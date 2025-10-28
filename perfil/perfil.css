@@ -172,6 +172,7 @@ body {
     border: 3px solid var(--cor-secundaria);
     object-fit: cover;
     cursor: pointer;
+    font-family: 'MuseoModerno', sans-serif;
 }
 
 .foto-container {
@@ -236,6 +237,7 @@ body {
     cursor: pointer;
     margin-top: 20px;
     transition: var(--transicao-suave);
+    font-family: 'MuseoModerno', sans-serif;
 }
 
 /* BIOGRAFIA */
