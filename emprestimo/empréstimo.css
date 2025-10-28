@@ -213,7 +213,7 @@ body {
     transform: scale(1.05);
 }
 
-.btn-comentarios, .btn-ler {
+.btn-avaliação, .btn-ler {
     background-color: var(--cor-fundo);
     color: var(--cor-secundaria);
     border: none;
@@ -228,7 +228,7 @@ body {
  
 }
 
-.btn-comentarios:hover {
+.btn-avaliação:hover {
     background-color: #f7e8c7;
     transform: scale(1.05);
 }

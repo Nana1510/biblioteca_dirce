@@ -166,11 +166,13 @@ body {
 
 .topo-catalogo {
     display: flex;
-    justify-content: space-between; /* título à esquerda, botão à direita */
+    justify-content: space-between;
+    /* título à esquerda, botão à direita */
     align-items: center;
     width: 100%;
     max-width: 900px;
-    margin: 40px auto 20px auto; /* centraliza horizontalmente com espaço em cima e embaixo */
+    margin: 40px auto 20px auto;
+    /* centraliza horizontalmente com espaço em cima e embaixo */
 }
 
 .topo-catalogo h2 {
@@ -207,7 +209,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 900px;
     color: var(--cor-secundaria);
-    
+
 }
 
 /* Cada livro */
@@ -264,9 +266,9 @@ body {
 }
 
 
+/* --- RODAPÉ --- */
 .rodape {
     background-color: var(--cor-secundaria);
-    position: relative;
     width: 100%;
     color: var(--cor-texto);
     padding: 10px 5%;
@@ -274,7 +276,7 @@ body {
     font-weight: bold;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: 8px;
+    margin-top: 40px;
 }
 
 .rodape a {

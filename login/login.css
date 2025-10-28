@@ -179,7 +179,6 @@ input[type="email"] {
 /* --- RODAPÉ --- */
 .rodape {
     background-color: var(--cor-secundaria);
-    position: relative;
     width: 100%;
     color: var(--cor-texto);
     padding: 10px 5%;

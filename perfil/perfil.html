@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biblioteca Dirce - Home</title>
+    <title>Biblioteca Dirce - Perfil</title>
     <link rel="stylesheet" href="/perfil/perfil.css" />
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
+    <!-- CABEÇALHO -->
     <div class="main-header-container">
         <header class="header">
             <h1>Biblioteca Dirce</h1>
 
             <div class="header-elements">
                 <div class="search-bar">
-                    <input type="text" placeholder="Pesquisar..." />
+                    <input type="text" id="pesquisa" placeholder="Pesquisar..." />
                 </div>
                 <div class="login">
                     <a href="/login/login.html">login/entrar</a>
@@ -28,28 +29,59 @@
         <nav class="navigation">
             <ul>
                 <li><a href="/index.html">Menu</a></li>
-                <li><a href="/comunidade/comentarios.html">Comunidade</a></li>
                 <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
                 <li><a href="/perfil/perfil.html">perfil</a></li>
                 <li><a href="/favoritos/favoritos.html">favoritos</a></li>
             </ul>
         </nav>
     </div>
-    <div class="detalhes-usuario">
-        <label for="input-upload-perfil" class="foto-perfil-container">
-            <img id="foto-perfil-preview" src="/imagens/perfil.png" alt="Foto de Perfil">
-            <div class="foto-perfil-overlay">
-                <i class="fas fa-camera"></i>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="perfil-container">
+        <!-- DETALHES DO USUÁRIO -->
+        <section class="detalhes-usuario">
+            <h2>detalhes sobre o usuario</h2>
+            <!-- Foto de perfil com menu -->
+            <div class="foto-container">
+                <img src="/imagens/perfil.jpg" alt="Foto de perfil" class="foto-perfil" id="foto-perfil">
+                <div id="menu-foto" class="menu-foto">
+                    <button id="adicionar-foto">Adicionar foto</button>
+                    <button id="remover-foto">Remover foto</button>
+                </div>
+                <input type="file" id="upload-foto" accept="image/*" style="display:none">
             </div>
-        </label>
 
-        <input type="file" id="input-upload-perfil" name="foto_perfil" accept="image/*" style="display: none;">
+            <div class="campo">
+                <label for="usuario">usuario:</label>
+                <input type="text" id="usuario" placeholder="..." disabled />
+            </div>
+            <div class="botoes-acao">
+                <button class="botao-salvar" disabled>salvar</button>
+            </div>
+        </section>
+        <!-- BIOGRAFIA -->
+        <section class="biografia">
+            <div class="pronomes">
+                <h2>pronomes</h2>
+                <select id="pronomes" disabled>
+                    <option value="">Escolha...</option>
+                    <option value="ela/dela">Ela/Dela</option>
+                    <option value="ele/dele">Ele/Dele</option>
+                    <option value="elu/delu">Elu/Delu</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <h2>biografia</h2>
+            <textarea placeholder="Clique em editar para adicionar sua biografia..." disabled></textarea>
+        </section>
+    </main>
 
-    </div>
+    <!-- RODAPÉ -->
     <footer class="rodape">
-        <p>Contato:<a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+        <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
     </footer>
 
+    <script src="/perfil/perfil.js"></script>
 </body>
 
 </html>
