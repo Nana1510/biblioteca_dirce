@@ -10,11 +10,8 @@
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
     --cor-secundaria: #8D5740;
-    /* Marrom de fundo/rodapé/livros */
     --cor-header: #5A3A2E;
-    /* Marrom escuro do header */
     --cor-botoes: #E9D7B4;
-    /* Cor de fundo do botão login/pesquisa */
     --transicao-suave: 0.5s ease-in-out;
 }
 
@@ -55,7 +52,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Mantém título na esquerda, login na direita */
     width: 100%;
     padding: 0 40px;
     text-align: center;
@@ -74,13 +70,10 @@ body {
 
 .login-container {
     display: flex;
-    /* coloca lado a lado */
     background-color: #E9D7B4;
-    /* marrom do fundo */
     padding: 20px;
     border-radius: 15px;
     gap: 40px;
-    /* espaço entre as caixas */
 }
 
 /* --- CADA CAIXA DE LOGIN OU CADASTRO --- */
@@ -96,7 +89,6 @@ body {
 /* --- TÍTULOS (h2) --- */
 h2 {
     color: #5A3A2E;
-    /* marrom escuro */
     font-size: 1.5rem;
     margin-bottom: 10px;
 
@@ -126,9 +118,7 @@ input[type="email"] {
     color: white;
     border: none;
     border-radius: 25px;
-    /* deixa mais redondinho */
     padding: 15px 50px;
-    /* aumenta o tamanho */
     width: 100%;
     cursor: pointer;
     font-weight: bold;
@@ -142,7 +132,6 @@ input[type="email"] {
 .login-btn:hover {
     background-color: #5A3A2E;
     transform: scale(1.03);
-    /* dá um efeitinho suave no hover */
 
 }
 
@@ -151,9 +140,7 @@ input[type="email"] {
     background-color: #ffffff;
     border: none;
     border-radius: 25px;
-    /* deixa bem redondinho também */
     padding: 15px 50px;
-    /* aumenta o tamanho */
     display: flex;
     align-items: center;
     justify-content: center;

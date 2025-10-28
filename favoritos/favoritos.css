@@ -10,11 +10,8 @@
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
     --cor-secundaria: #8D5740;
-    /* Marrom de fundo/rodapé/livros */
     --cor-header: #5A3A2E;
-    /* Marrom escuro do header */
     --cor-botoes: #E9D7B4;
-    /* Cor de fundo do botão login/pesquisa */
     --transicao-suave: 0.5s ease-in-out;
 }
 
@@ -162,7 +159,6 @@ body {
 .recomendados {
     justify-content: center;
     align-items: center;
-    /* Garante que o conteúdo não fique sob o header */
     padding-top: 10px;
 }
 
@@ -277,14 +273,12 @@ body {
 
     .recomendados-livros {
         flex-wrap: wrap;
-        /* Quebra em linhas se não couber */
         gap: 25px;
         justify-content: center;
     }
 
     .recomendados-livros .livro {
         width: 220px;
-        /* Um pouco menor pra caber melhor */
     }
 
     .navigation ul {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Biblioteca Dirce - Catálogo</title>
-    <link rel="stylesheet" href="catalogo.css" />
+    <link rel="stylesheet" href="catalogo.css" /> 
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
@@ -16,7 +16,7 @@
             <h1>Biblioteca Dirce</h1>
             <div class="header-elements">
                 <div class="search-bar">
-                    <input type="text" id="pesquisa" placeholder="Pesquisar..." />
+                    <input type="text" placeholder="Pesquisar..." />
                 </div>
                 <div class="login">
                     <a href="/login/login.html">login/entrar</a>
@@ -28,44 +28,165 @@
             <ul>
                 <li><a href="/index.html">Menu</a></li>
                 <li><a href="/catálogo/catalogo.html">Catálogo</a></li>
-                <li><a href="/perfil/perfil.html">Perfil</a></li>
-                <li><a href="/favoritos/favoritos.html">Favoritos</a></li>
+                <li><a href="/perfil/perfil.html">perfil</a></li>
+                <li><a href="/favoritos/favoritos.html">favoritos</a></li>
             </ul>
         </nav>
     </div>
 
     <main class="main-content">
+        
         <div class="topo-catalogo">
             <h2>Catálogo de Livros</h2>
-            <button class="btn-categorias">Categorias</button>
+            <select id="filtro-categorias" class="btn-categorias" onchange="filtrarLivros()">
+                <option value="todos">categorias</option>
+                <option value="fantasia">fantasia</option>
+                <option value="romance">romance</option>
+                <option value="ficcao">ficção</option>
+                <option value="suspense">suspense</option>
+            </select>
         </div>
 
-        <div class="livros-catalogo">
-            <!-- Os livros serão carregados dinamicamente pelo JS -->
-        </div>
+        <section class="carousel-section">
+            
+            <button class="arrow prev-arrow" onclick="scrollCarousel(-1)">&#10094;</button>
+            
+            <div class="livros-catalogo-carrossel" id="livros-carrossel">
 
-        <!-- Layout de detalhes + comentários -->
-        <div id="detalhes-livro" class="detalhes-livro" style="display:none;">
-            <h2 id="titulo-livro"></h2>
-            <p id="sinopse-livro"></p>
+                <div class="livros-item fantasia">
+                    <img src="/livros/coraline.jpg" alt="Capa Coraline" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Coraline</h2>
+                        <p>Ao se mudar para uma casa antiga, Coraline descobre uma porta secreta que a leva a um mundo alternativo assustadoramente parecido com o dela. A diferença é que a "Outra Mãe" tem botões no lugar dos olhos e tenta mantê-la para sempre, exigindo que Coraline também costure botões em seu rosto.</p>
+                        <a href="/emprestimo/coraline.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
 
-            <div id="comentarios-livro">
-                <h3>Comentários</h3>
-                <ul id="lista-comentarios"></ul>
+                <div class="livros-item fantasia">
+                    <img src="/livros/alice.jpg" alt="Capa Alice no País das Maravilhas" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Alice no País das Maravilhas</h2>
+                        <p>Alice é uma menina curiosa e sonhadora que, ao seguir um apressado Coelho Branco, cai em um buraco profundo e desperta em um País das Maravilhas completamente bizarro. Lá, ela encontra criaturas excêntricas e precisa desvendar enigmas ilógicos para voltar para casa.</p>
+                        <a href="/emprestimo/alice.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
 
-                <form id="form-comentario">
-                    <input type="text" id="input-comentario" placeholder="Escreva um comentário" required>
-                    <button type="submit">Enviar</button>
-                </form>
+                <div class="livros-item suspense">
+                    <img src="/livros/verity.jpg" alt="Capa Verity" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Verity</h2>
+                        <p>Lowen Ashleigh, uma escritora com problemas financeiros, aceita a proposta de Jeremy Crawford para finalizar a série de livros de sua esposa, Verity, que ficou incapacitada. Ao vasculhar os manuscritos, Lowen encontra uma autobiografia secreta que revela aterrorizantes confissões e segredos de família.</p>
+                        <a href="/emprestimo/verity.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="livros-item fantasia romance">
+                    <img src="/livros/sol da meia noite.jpg" alt="skin of a killer" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Sol da Meia Noite</h2>
+                        <p>Em "Sol da Meia-Noite", a história de Crepúsculo é contada sob a perspectiva de Edward Cullen. Aqui, o leitor mergulha na mente de um vampiro dividido entre o amor e o instinto, lutando contra o desejo incontrolável pelo sangue — e pela alma — de Bella Swan.</p>
+                        <a href="/emprestimo/sol.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+                
+                <div class="livros-item ficcao">
+                    <img src="/livros/batman.jpg" alt="Capa Absolute Batman" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Absolute Batman</h2>
+                        <p>Uma coleção definitiva das HQs mais aclamadas do Cavaleiro das Trevas. A trama mergulha na mente complexa do Batman, explorando suas origens, seus confrontos com os vilões mais icônicos de Gotham e as questões morais que definem a sua luta por justiça.</p>
+                        <a href="/emprestimo/batman.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="livros-item ficcao">
+                    <img src="/livros/nada de novo no front.jpg" alt=" Nada de Novo no Front" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Nada de Novo no Front</h2>
+                        <p>Paul Bäumer se alista no exército alemão com seus colegas de escola. A euforia patriótica se transforma em desespero ao enfrentar os horrores ininterruptos das trincheiras da Primeira Guerra Mundial, onde a luta pela sobrevivência destrói a juventude e a inocidade.</p>
+                        <a href="/emprestimo/nada.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="livros-item ficcao">
+                    <img src="/livros/a metamorfose.jpg" alt="Metamorfose" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>A Metamorfose</h2>
+                        <p>Certa manhã, Gregor Samsa, um caixeiro-viajante, acorda transformado em um inseto gigantesco e repugnante. A história acompanha a decadência física e mental de Gregor, enquanto sua família lida com o horror da sua nova condição e o peso da perda do seu sustento.</p>
+                        <a href="/emprestimo/metamorfose.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="livros-item romance">
+                    <img src="/livros/noites brancas.jpg" alt="noites brancas" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Noites Brancas</h2>
+                        <p>Passada em São Petersburgo, esta é a história de um narrador solitário que, durante quatro noites mágicas de verão, encontra a jovem Nástienka em uma ponte. O romance explora a beleza dos encontros fugazes e a dor da solidão, questionando a diferença entre o sonho e a realidade do amor.</p>
+                        <a href="/emprestimo/noites.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="livros-item romance">
+                    <img src="/livros/a hipótese do amor.jpg" alt="hipótese" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>A Hipótese do Amor</h2>
+                        <p>Olive Smith, aluna de PhD, precisa convencer sua melhor amiga de que está namorando. Ela beija Adam Carlsen, um professor rabugento conhecido por ser inacessível, e inicia uma "hipótese de namoro" que rapidamente se desenvolve para algo mais sério e inesperado.</p>
+                        <a href="/emprestimo/hipotese.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+                
+                <div class="livros-item fantasia suspense">
+                    <img src="/livros/dracula.jpg" alt="drácula" class="livros-capa">
+                    <div class="livros-info">
+                        <h2>Drácula</h2>
+                        <p>O jovem advogado Jonathan Harker viaja para o Castelo de Drácula, na Transilvânia, para fechar um negócio imobiliário. Logo ele percebe que está em perigo e que seu cliente, o misterioso Conde Drácula, planeja se mudar para Londres para espalhar seu terror e sede de sangue pelo mundo moderno.</p>
+                        <a href="/emprestimo/dracula.html" class="botao-vermais">Ver mais</a>
+                    </div>
+                </div>
+                
             </div>
-        </div>
+            
+            <button class="arrow next-arrow" onclick="scrollCarousel(1)">&#10095;</button>
+        </section>
+
     </main>
 
     <footer class="rodape">
-        <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
+        <p>Contato:<a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
     </footer>
 
-    <script src="/catálogo/catalogo.js"></script>
+    <script>
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('livros-carrossel');
+            // 550px é a largura de um card + margem, para rolar um de cada vez
+            const scrollAmount = 550; 
+            
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+        
+        function filtrarLivros() {
+            const filtro = document.getElementById('filtro-categorias').value;
+            const livros = document.querySelectorAll('.livros-catalogo-carrossel .livros-item');
+
+            livros.forEach(livro => {
+                // Checa se o filtro é 'todos' OU se o livro possui a classe do filtro
+                // Note que alguns livros possuem duas classes (ex: fantasia romance)
+                if (filtro === 'todos' || livro.classList.contains(filtro)) {
+                    livro.style.display = 'flex'; // Mostra o livro
+                } else {
+                    livro.style.display = 'none'; // Esconde o livro
+                }
+            });
+            
+            // Volta o carrossel para o início após a filtragem.
+            document.getElementById('livros-carrossel').scrollTo(0, 0); 
+        }
+        
+        // Inicializa o filtro ao carregar a página
+        window.onload = filtrarLivros;
+    </script>
 </body>
 
 </html>

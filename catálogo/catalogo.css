@@ -10,13 +10,10 @@
     --cor-fundo: #E9D7B4;
     --cor-texto: #ffffff;
     --cor-secundaria: #8D5740;
-    /* Marrom de fundo/rodapé/livros */
     --cor-header: #5A3A2E;
-    /* Marrom escuro do header */
-    --cor-botoes: #E9D7B4;
-    /* Cor de fundo do botão login/pesquisa */
-
-    /* TRANSICÃO SUAVE FINAL */
+   --cor-botoes: #E9D7B4;
+    --cor-card-fundo: #e7cd9d;
+    --cor-texto-card: #5A3A2E;
     --transicao-suave: 0.5s ease-in-out;
 }
 
@@ -41,26 +38,22 @@ body {
     background-color: var(--cor-header);
     background-image: url(/imagens/header.png);
     height: 150px;
-    /* igual altura da imagem */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0 0 10px 10px;
-    /* Apenas o fundo arredondado */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding-top: 20px;
-    /* Espaço no topo para o conteúdo */
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Mantém título na esquerda, login na direita */
     width: 100%;
     padding: 0 40px;
 }
@@ -152,27 +145,15 @@ body {
     transition: background-color var(--transicao-suave), transform var(--transicao-suave);
 }
 
-.navigation li a:hover {
-    background-color: var(--cor-secundaria);
-    transform: scale(1.03);
-}
-
-.navigation li a:active {
-    color: var(--cor-fundo);
-    text-shadow: 0 0 8px var(--cor-fundo), 0 0 2px var(--cor-texto);
-    transform: scale(1.05);
-    transition: transform 0.1s ease-out;
-}
-
+/* --- SEÇÃO DO CATÁLOGO (Título e Filtro) --- */
 .topo-catalogo {
     display: flex;
     justify-content: space-between;
-    /* título à esquerda, botão à direita */
     align-items: center;
-    width: 100%;
     max-width: 900px;
+    width: 90%;
     margin: 40px auto 20px auto;
-    /* centraliza horizontalmente com espaço em cima e embaixo */
+    padding: 0 40px;
 }
 
 .topo-catalogo h2 {
@@ -180,6 +161,7 @@ body {
     font-size: 2rem;
 }
 
+/* Estilização do Filtro SELECT */
 .btn-categorias {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
@@ -191,78 +173,144 @@ body {
     transition: var(--transicao-suave);
     font-family: 'MuseoModerno', sans-serif;
     font-size: 1.1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 45px;
 }
 
 .btn-categorias:hover {
     transform: scale(1.05);
 }
 
+/* --- SEÇÃO DO CARROSSEL (SLIDER) --- */
 
-.livros-catalogo {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 40px;
-    margin: 40px auto;
-    background-color: #D8BF90;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.carousel-section {
+    position: relative;
     max-width: 900px;
-    color: var(--cor-secundaria);
-
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
-/* Cada livro */
-.livros-item {
+/* Contêiner que Rola Horizontalmente */
+.livros-catalogo-carrossel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    gap: 30px;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    -ms-overflow-style: none;
+}
+
+.livros-catalogo-carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- CARD DE CADA LIVRO (Formato Compacto) --- */
+.livros-catalogo-carrossel .livros-item {
+    min-width: 500px;
+    max-width: 500px;
+    flex-shrink: 0;
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background-color: #E9D7B4;
+    background-color: var(--cor-card-fundo);
     border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    min-height: 250px;
 }
 
 /* Imagem da capa */
 .livros-capa {
     width: 120px;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 
 /* Texto ao lado */
 .livros-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .livros-info h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 1.6rem;
-    color: var(--cor-header);
+    color: var(--cor-texto-card);
 }
 
 .livros-info p {
     font-size: 1rem;
-    margin-bottom: 10px;
-    color: #5A3A2E;
+    margin-bottom: 15px;
+    color: var(--cor-texto-card);
+    text-align: justify;
+    line-height: 1.5;
 }
 
 .botao-vermais {
     display: inline-block;
+    align-self: flex-start;
     text-decoration: none;
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 8px 25px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: var(--transicao-suave);
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 .botao-vermais:hover {
-    background-color: var(--cor-secundaria);
+    background-color: #6C4234;
     transform: scale(1.05);
+}
+
+/* --- Estilos das Setas de Navegação --- */
+.arrow {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color var(--transicao-suave);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.arrow:hover {
+    background-color: var(--cor-header);
+}
+
+.prev-arrow {
+    left: -20px;
+}
+
+
+.next-arrow {
+    right: -20px;
 }
 
 

@@ -11,15 +11,15 @@
 
 <body>
 
-    <!-- CABEÇALHO -->
     <div class="main-header-container">
         <header class="header">
             <h1>Biblioteca Dirce</h1>
 
+            <div class="search-bar">
+                <input type="text" id="pesquisa" placeholder="Pesquisar..." />
+            </div>
+
             <div class="header-elements">
-                <div class="search-bar">
-                    <input type="text" id="pesquisa" placeholder="Pesquisar..." />
-                </div>
                 <div class="login">
                     <a href="/login/login.html">login/entrar</a>
                 </div>
@@ -36,47 +36,47 @@
         </nav>
     </div>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="perfil-container">
-        <!-- DETALHES DO USUÁRIO -->
-        <section class="detalhes-usuario">
-            <h2>detalhes sobre o usuario</h2>
-            <!-- Foto de perfil com menu -->
-            <div class="foto-container">
-                <img src="/imagens/perfil.jpg" alt="Foto de perfil" class="foto-perfil" id="foto-perfil">
-                <div id="menu-foto" class="menu-foto">
-                    <button id="adicionar-foto">Adicionar foto</button>
-                    <button id="remover-foto">Remover foto</button>
-                </div>
-                <input type="file" id="upload-foto" accept="image/*" style="display:none">
-            </div>
+    <main class="main-content">
 
-            <div class="campo">
-                <label for="usuario">usuario:</label>
-                <input type="text" id="usuario" placeholder="..." disabled />
-            </div>
-            <div class="botoes-acao">
-                <button class="botao-salvar" disabled>salvar</button>
-            </div>
-        </section>
-        <!-- BIOGRAFIA -->
-        <section class="biografia">
-            <div class="pronomes">
-                <h2>pronomes</h2>
-                <select id="pronomes" disabled>
-                    <option value="">Escolha...</option>
-                    <option value="ela/dela">Ela/Dela</option>
-                    <option value="ele/dele">Ele/Dele</option>
-                    <option value="elu/delu">Elu/Delu</option>
-                    <option value="outro">Outro</option>
-                </select>
-            </div>
-            <h2>biografia</h2>
-            <textarea placeholder="Clique em editar para adicionar sua biografia..." disabled></textarea>
-        </section>
+        <div class="perfil-container">
+            <section class="detalhes-usuario">
+                <h2 style="color: var(--cor-texto-perfil);">detalhes sobre o usuario</h2>
+
+                <div class="foto-container">
+                    <img src="/imagens/perfil.jpg" alt="Foto de perfil" class="foto-perfil" id="foto-perfil">
+                    <div id="menu-foto" class="menu-foto">
+                        <button id="adicionar-foto">Adicionar foto</button>
+                        <button id="remover-foto">Remover foto</button>
+                    </div>
+                    <input type="file" id="upload-foto" accept="image/*" style="display:none">
+                </div>
+
+                <div class="campo">
+                    <label for="usuario">usuario:</label>
+                    <input type="text" id="usuario" placeholder="..." disabled />
+                </div>
+                <div class="botoes-acao">
+                    <button class="botao-salvar" disabled>salvar</button>
+                </div>
+            </section>
+
+            <section class="biografia">
+                <div class="pronomes">
+                    <h2 style="color: var(--cor-texto-perfil);">pronomes</h2>
+                    <select id="pronomes" disabled>
+                        <option value="">Escolha...</option>
+                        <option value="ela/dela">Ela/Dela</option>
+                        <option value="ele/dele">Ele/Dele</option>
+                        <option value="elu/delu">Elu/Delu</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <h2 style="color: var(--cor-texto-perfil);">biografia</h2>
+                <textarea placeholder="Clique em editar para adicionar sua biografia..." disabled></textarea>
+            </section>
+        </div>
     </main>
 
-    <!-- RODAPÉ -->
     <footer class="rodape">
         <p>Contato: <a href="mailto:biblioteca.dirce@gmail.com">biblioteca.dirce@gmail.com</a></p>
     </footer>
