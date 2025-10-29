@@ -189,14 +189,15 @@ body {
 .recomendados-livros {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 100px;
     padding: 40px 20px;
     text-align: center;
     flex-wrap: wrap;
     margin-top: 0px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
+    margin-left: 50px;
+    margin-right: 50px;
 
 }
 
@@ -224,7 +225,7 @@ body {
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
-    
+
 }
 
 .recomendados-livros .livro:hover {
@@ -247,6 +248,7 @@ body {
 .rodape a {
     color: var(--cor-texto);
 }
+
 /* --- MEDIA QUERIES --- */
 /* Notebooks 1024px ~ 1366px */
 @media (max-width: 1366px) and (min-width: 769px) {

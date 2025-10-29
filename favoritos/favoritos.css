@@ -189,11 +189,12 @@ body {
 .recomendados-livros {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 105px;
     padding: 40px 20px;
     text-align: center;
     flex-wrap: nowrap;
     margin-top: 0px;
+
 
 
 }
