@@ -171,15 +171,13 @@ input[type="email"] {
     padding: 10px 5%;
     font-size: 0.9em;
     font-weight: bold;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-top: 40px;
+    bottom: 0%;
+    position: absolute;
 }
 
 .rodape a {
     color: var(--cor-texto);
 }
-
 /* --- MEDIA QUERIES --- */
 /* Notebooks 1024px ~ 1366px */
 @media (max-width: 1366px) and (min-width: 769px) {
